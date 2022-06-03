@@ -7,7 +7,7 @@ function App() {
   const theme = state.theme
   function handleDec() {
     setCount(prevCount => {
-      return {...prevCount,  count: prevCount - 1}
+      return {...prevCount,  count: "yellow"}
     })
   }
   function incCount() {
