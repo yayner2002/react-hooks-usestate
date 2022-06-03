@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 
 function App() {
-  const [count, setCount ] = useState()
+  const [count, setCount ] = useState(10)
   function handleDec() {
     setCount(state => state -1)
   }
