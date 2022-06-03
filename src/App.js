@@ -5,7 +5,9 @@ function App() {
   const [restype, setRes] = useState('posts')
 
   useEffect(() => {
-  },[restype])
+    console.log("resource type changed")
+
+  },[])
   // const [count, setCount ] = useState(10)
   // const [theme, setTheme ] = useState('red')
 
