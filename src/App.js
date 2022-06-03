@@ -2,16 +2,15 @@ import './App.css';
 import React, { useState } from 'react';
 
 function App() {
-  const [state, setCount ] = useState({count:10, theme:'red'})
-  const count = state.count
-  const theme = state.theme
+  const [count, setCount ] = useState(10)
+  const [theme, setTheme ] = useState('red')
+
   function handleDec() {
-    setCount(state => {
-      return {...state,  count: state.count - 1  }
-    })
+ setCount(count => count - 1)
   }
   function incCount() {
     setCount((count) => count + 1)
+    setTheme('yay')
   }
   return (
     <div className="App">
