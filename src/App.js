@@ -5,7 +5,6 @@ function App() {
   const [restype, setRes] = useState('posts')
 
   useEffect(() => {
-    console.log('res type changed')
   },[restype])
   // const [count, setCount ] = useState(10)
   // const [theme, setTheme ] = useState('red')
