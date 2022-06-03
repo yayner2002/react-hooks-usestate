@@ -2,16 +2,20 @@ import './App.css';
 import React, { useState } from 'react';
 
 function App() {
-  const [count, setCount ] = useState(10)
+  const [state, setCount ] = useState({count:10, theme:'red'})
+  const count = state.count
+  const theme = state.theme
   function handleDec() {
-    setCount(state => state -1)
+    setCount(prevCount => {
+      return {...prevCount,  count: prevCount - 1}
+    })
   }
   function incCount() {
     setCount((count) => count + 1)
   }
   return (
     <div className="App">
-      <button onClick={handleDec}>-</button><span>{count}</span><button onClick={incCount}>+</button>
+      <button onClick={handleDec}>-</button><span>{count}{theme}</span><button onClick={incCount}>+</button>
     </div>
   );
 }
