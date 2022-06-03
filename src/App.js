@@ -6,6 +6,14 @@ function App() {
   // const [items, setItem] = useState([])
   const [winWidth, setWinWidth] = useState(window.innerWidth)
 
+  const handleResize = () => {
+    setWinWidth(window.innerWidth)
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+
+  },[])
+
   // useEffect(() => {
   //   fetch(`https://jsonplaceholder.typicode.com/${restype}`)
   //   .then(res => res.json())
