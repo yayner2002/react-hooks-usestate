@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react';
 
 function App() {
   const [restype, setRes] = useState('posts')
+  const [items, setItem] = useState([])
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/${restype}`)
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => setItem(data))
 
   },[restype])
   // const [count, setCount ] = useState(10)
@@ -28,6 +29,9 @@ function App() {
       <button onClick={() => setRes('comments')}>Comments</button>
     </div>
     <div>{restype}</div>
+    {items.map(i => {
+      return <pre>{JSON.stringify(i)}</pre>
+    })}
     </React.Fragment>
   );
 }
