@@ -1,21 +1,31 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
-  const [count, setCount ] = useState(10)
-  const [theme, setTheme ] = useState('red')
+  const [restype, setRes] = useState('posts')
 
-  function handleDec() {
- setCount(count => count - 1)
-  }
-  function incCount() {
-    setCount((count) => count + 1)
-    setTheme('yay')
-  }
+  useEffect(() => {
+    console.log('res type changed')
+  },[restype])
+  // const [count, setCount ] = useState(10)
+  // const [theme, setTheme ] = useState('red')
+
+//   function handleDec() {
+//  setCount(count => count - 1)
+//   }
+//   function incCount() {
+//     setCount((count) => count + 1)
+//     setTheme('yay')
+//   }
   return (
-    <div className="App">
-      <button onClick={handleDec}>-</button><span>{count}{theme}</span><button onClick={incCount}>+</button>
+    <React.Fragment>
+      <div className="App">
+      <button onClick={() => setRes('posts')}>Posts</button>
+      <button onClick={() => setRes('Users')}>Users</button>
+      <button onClick={() => setRes('Comments')}>Comments</button>
     </div>
+    <div>{restype}</div>
+    </React.Fragment>
   );
 }
 
