@@ -5,9 +5,11 @@ function App() {
   const [restype, setRes] = useState('posts')
 
   useEffect(() => {
-    console.log("resource type changed")
+    fetch(`https://jsonplaceholder.typicode.come/${restype}`)
+    .then(res => res.json())
+    .then(data => console.log(data))
 
-  },[])
+  },[restype])
   // const [count, setCount ] = useState(10)
   // const [theme, setTheme ] = useState('red')
 
@@ -22,8 +24,8 @@ function App() {
     <React.Fragment>
       <div className="App">
       <button onClick={() => setRes('posts')}>Posts</button>
-      <button onClick={() => setRes('Users')}>Users</button>
-      <button onClick={() => setRes('Comments')}>Comments</button>
+      <button onClick={() => setRes('users')}>Users</button>
+      <button onClick={() => setRes('comments')}>Comments</button>
     </div>
     <div>{restype}</div>
     </React.Fragment>
